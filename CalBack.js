@@ -5,54 +5,49 @@ var operand1 = null;
 var operand2 = null;
 var operator = null;
 
-document.addEventListener('keypress',function(event){
+document.addEventListener('keydown',function(event){
     var value = event.key;
-    const allowed = /[0-9%\/*\-+=]/;
+    const allowed = /[0-9+\-*/=BackspaceEnterShift]/;
     if(!allowed.test(value))return;
-    else if(value == '+'){
+    else if(value === '+'){
         operator = '+';
         operand1 = parseFloat(b.textContent);
         b.innerText = '';
     }
-    else if(value == '-'){
+    else if(value === '-'){
         operator = '-';
         operand1 = parseFloat(b.textContent);
         b.innerText = '';
     }
-    else if(value == '*'){
+    else if(value === '*'){
         operator = '*';
         operand1 = parseFloat(b.textContent);
         b.innerText = '';
     }
-    else if(value == '/'){
+    else if(value === '/'){
         operator = '/';
         operand1 = parseFloat(b.textContent);
         b.innerText = '';
     }
-    else if(value == 'Enter'){
+    else if(value === 'Enter'){
         operand2 = parseFloat(b.textContent);
         var a = eval('operand1' + operator + 'operand2');
         b.innerText = a;
         operand1 = a;
         operand2 = 0;
     }
-    else if(value == '%'){
+    else if(value === '%'){
         operator = '%';
         operand1 = parseFloat(b.textContent);
         b.innerText = '';
     }
-    else if(value == 'AC'){
-        b.innerText = '';
-        operator = 0;
-        operand1 = 0;
-        operand2 = 0;
-    }
-    else if(value == 'Backspace'){
+    else if(value === 'Backspace'){
+        event.preventDefault();
         b.innerText = b.innerText.slice(0,-1);
     }
     else{
         if(b.innerText == '0')b.innerText = '';
-        b.innerText += value;
+        else if(value != 'Shift')b.innerText += value;
     }
 });
 
