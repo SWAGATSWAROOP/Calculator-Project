@@ -50,6 +50,7 @@ for(var i = 0;i < a.length;i++){
             b.innerText = b.innerText.slice(0,-1);
         }
         else{
+            if(b.innerText == '0')b.innerText = '';
             b.innerText += value;
         }
     });
