@@ -35,6 +35,11 @@ for(var i = 0;i < a.length;i++){
             operand1 = a;
             operand2 = 0;
         }
+        else if(value == '%'){
+            operator = '%';
+            operand1 = parseFloat(b.textContent);
+            b.innerText = '';
+        }
         else if(value == 'AC'){
             b.innerText = a;
             operator = 0;
