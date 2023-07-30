@@ -25,6 +25,8 @@
     position: relative;
     background-color: #f9ce98;
     margin: 2.5%;
+    text-align: right;
+    font-size: 2.5rem;
 }
 
 #Buttons-Container{
