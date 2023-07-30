@@ -41,7 +41,7 @@ for(var i = 0;i < a.length;i++){
             b.innerText = '';
         }
         else if(value == 'AC'){
-            b.innerText = a;
+            b.innerText = '';
             operator = 0;
             operand1 = 0;
             operand2 = 0;
