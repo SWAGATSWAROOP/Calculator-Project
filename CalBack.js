@@ -16,14 +16,17 @@ for(var i = 0;i < a.length;i++){
         else if(value == '-'){
             operator = '-';
             operand1 = parseFloat(b.textContent);
+            b.innerText = '';
         }
         else if(value == '*'){
             operator = '*';
             operand1 = parseFloat(b.textContent);
+            b.innerText = '';
         }
         else if(value == '/'){
             operator = '/';
             operand1 = parseFloat(b.textContent);
+            b.innerText = '';
         }
         else if(value == '='){
             operand2 = parseFloat(b.textContent);
